@@ -24,7 +24,12 @@
     </div>
     <hr>
     @foreach($tweets as $tweet)
-      <p>{{ $tweet->content }}</p>
+      <details>
+        <summary>{{ $tweet->content }}</summary>
+        <div>
+          <a href="{{ route('tweet.update.index', ['tweetId' => $tweet->id]) }}">編集</a>
+        </div>
+      </details>
     @endforeach
   </body>
 </html>
