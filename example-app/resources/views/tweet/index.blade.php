@@ -9,5 +9,9 @@
   <body>
     <h1>つぶやきアプリ</h1>
     <p>{{ $name }}</p>
+    <p>{{ $version }}</p>
+    @foreach($tweets as $tweet)
+      <p>{{ $tweet->content }}</p>
+    @endforeach
   </body>
 </html>
