@@ -21,7 +21,7 @@ class IndexController extends Controller
         
         // return View::make('tweet.index', ['name' => 'larabel']);
 
-        $tweets = Tweet::all();
+        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         //dd($tweets);
         return View::make('tweet.index', ['name' => 'larabel', 'version' => '8', 'tweets' => $tweets]);
 
